@@ -19,7 +19,7 @@ module Devise
         def self.enforce_stretches(stretches)
           return stretches if stretches.to_i >= MIN_STRETCHES
           return MIN_STRETCHES if ALWAYS_OVERRIDE
-          raise ArgumentError, "stretches (#{stretches.inspec}) must be >= #{MIN_STRETCHES}, or set env var #{ENV_OVERRIDE}"
+          raise ArgumentError, "stretches (#{stretches.inspect}) must be >= #{MIN_STRETCHES}, or set env var #{ENV_OVERRIDE}"
         end
 
         def self.compare(encrypted_password, password, stretches, salt, pepper)
